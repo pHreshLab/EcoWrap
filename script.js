@@ -12,12 +12,12 @@ setDoc
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCMOFzxcFVAS9cUTyZMWb91xnm0a2sEIJo",
-    authDomain: "ecowrap-d06e0.firebaseapp.com",
-    projectId: "ecowrap-d06e0",
-    storageBucket: "ecowrap-d06e0.firebasestorage.app",
-    messagingSenderId: "729333812617",
-    appId: "1:729333812617:web:b4eb3630b66eac08e36558"
+  apiKey: "AIzaSyCMOFzxcFVAS9cUTyZMWb91xnm0a2sEIJo",
+  authDomain: "ecowrap-d06e0.firebaseapp.com",
+  projectId: "ecowrap-d06e0",
+  storageBucket: "ecowrap-d06e0.firebasestorage.app",
+  messagingSenderId: "729333812617",
+  appId: "1:729333812617:web:b4eb3630b66eac08e36558"
 };
 
 // Initialize Firebase
