@@ -47,8 +47,8 @@ else if (docSnap.exists()) {
 
   document.getElementById("info").innerHTML =
     "Food: " + data.foodName + "<br>" +
-    "Prepared: " + data.prepTime + "<br>" +
-    "Best before: " + data.bestBefore + "<br>" +
+    "Prepared: " + formatDateTime(data.prepTime) + "<br>" +
+    "Best before: " + formatDateTime(data.bestBefore) + "<br>" +
     "Details: " + data.details;
 
 }
@@ -80,3 +80,29 @@ window.claimItem = async function () {
 
 }
 
+window.goToCode = function () {
+
+  const code = document.getElementById("testCode").value;
+
+  if (!code) {
+    alert("Please enter a serial code");
+    return;
+  }
+
+  window.location.href = "?code=" + code;
+
+};
+
+function formatDateTime(datetimeString) {
+
+  const date = new Date(datetimeString);
+
+  return date.toLocaleString("en-MY", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit"
+  });
+
+}
