@@ -6,7 +6,7 @@ getFirestore,
 doc,
 getDoc,
 setDoc
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,25 +30,35 @@ const db = getFirestore(app);
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
+
+
 const docRef = doc(db, "foodItems", code);
 const docSnap = await getDoc(docRef);
 
+if (!code) {
 
-// display the code
-if(code &&docSnap.exists()) {
+  document.getElementById("info").innerText = "No QR code provided.";
 
-    const data = docSnap.data();
+}
 
-    document.getElementById("info").innerHTML =
+else if (docSnap.exists()) {
+
+  const data = docSnap.data();
+
+  document.getElementById("info").innerHTML =
     "Food: " + data.foodName + "<br>" +
     "Prepared: " + data.prepTime + "<br>" +
     "Best before: " + data.bestBefore + "<br>" +
     "Details: " + data.details;
 
-} else {
+}
 
-    document.getElementById("info").innerText =
-        "Item not found.";
+else {
+
+  document.getElementById("info").innerText =
+    "This item has not been claimed yet.";
+
+  document.getElementById("claimForm").style.display = "block";
 
 }
 
