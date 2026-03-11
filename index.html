@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>QR Serial System</title>
+    <title>EcoWrap: Food-pHreshness QR-Tag</title>
 </head>
 
 <body>
 
-<h1>QR Serial Content</h1>
+<h1>EcoWrap: Food-pHreshness QR-Tag</h1>
 
-<p id="content">Loading...</p>
+<div id="info"></div>
 
-<script src="script.js"></script>
+<div id="claimForm" style="display:none">
+
+<input id="foodName" placeholder="Food name">
+
+<input type="datetime-local" id="prepTime">
+
+<input type="datetime-local" id="bestBefore">
+
+<input id="details" placeholder="Details">
+
+<button onclick="claimItem()">Claim</button>
+
+</div>
+
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
+</html>
+
