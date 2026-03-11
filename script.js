@@ -6,7 +6,7 @@ getFirestore,
 doc,
 getDoc,
 setDoc
-} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -79,3 +79,4 @@ window.claimItem = async function () {
   location.reload();
 
 }
+
