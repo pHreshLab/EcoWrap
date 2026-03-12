@@ -4,6 +4,7 @@ body {
     font-family: 'Funnel Sans';
     margin: 30px;
     background-color: #a0ae67;
+    color: white;
 }
 
 .header {
@@ -12,10 +13,13 @@ body {
     padding: 10px;
     text-align: center;
     border-radius: 8px;
+    color: white;
 }
 
+
+
 .footer {
-    background-color: #e4c341;
+    background-color: #394430;
     text-align: center;
     color: white;
     padding: 2px;
@@ -24,3 +28,4 @@ body {
     left: 0;
     width: 100%;
 }
+
