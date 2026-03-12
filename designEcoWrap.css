@@ -1,0 +1,26 @@
+
+
+body {
+    font-family: 'Funnel Sans';
+    margin: 30px;
+    background-color: #a0ae67;
+}
+
+.header {
+    background-color: #c4d094;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.footer {
+    background-color: #e4c341;
+    text-align: center;
+    color: white;
+    padding: 2px;
+    position: fixed;   /* Sticks to the viewport */
+    bottom: 0;         /* Align to bottom */
+    left: 0;
+    width: 100%;
+}

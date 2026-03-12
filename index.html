@@ -1,26 +1,41 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
     <title>EcoWrap: Food-pHreshness QR-Tag</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="designEcoWrap.css">
+
+
 </head>
 
 <body>
 
-<h1>EcoWrap: Food-pHreshness QR-Tag</h1>
+<div class="header">    
 
-<div id="info"></div>
+    <h1>EcoWrap: Food-pHreshness QR-Tag</h1>
+
+</div>
+
+<div id="info"> </div>
 
 <div id="claimForm" style="display:none">
 
-<input id="foodName" placeholder="Food name">
+    <input id="foodName" placeholder="Food name">
 
-<input type="datetime-local" id="prepTime">
+    <input type="datetime-local" id="prepTime">
 
-<input type="datetime-local" id="bestBefore">
+    <input type="datetime-local" id="bestBefore">
 
-<input id="details" placeholder="Details">
+    <input id="details" placeholder="Details">
 
-<button onclick="claimItem()">Claim</button>
+    <button onclick="claimItem()">Claim</button>
 
 </div>
 
@@ -33,6 +48,12 @@
 <input id="testCode" placeholder="Enter serial code">
 
 <button onclick="goToCode()">Open</button>
+
+</div>
+
+<div class="footer">
+
+    <p>EcoWrap by pHreshlab</p>    
 
 </div>
 
