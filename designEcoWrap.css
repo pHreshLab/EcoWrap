@@ -29,3 +29,16 @@ body {
     width: 100%;
 }
 
+.prettyButton {
+
+  background-color: #c4d094;
+  color: white;
+  font-size: 15px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-family: "Lexend Deca"
+
+}

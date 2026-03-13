@@ -26,30 +26,42 @@
 
 <div id="info" style="margin-top:20px"> <p>Loading...</p> </div>
 
-<div id="claimForm" style="display:none">
+<div id="claimForm" style="display:block">
 
-    <input id="foodName" placeholder="Food name">
+    <p>Food name:</p>
+
+    <input id="foodName" placeholder="Nasi Goreng">
+
+    <p>Prepared time:</p>
 
     <input type="datetime-local" id="prepTime">
 
+    <p>Best before:</p>
+
     <input type="datetime-local" id="bestBefore">
 
-    <input id="details" placeholder="Details">
+    <p>Details:</p>
 
-    <button onclick="claimItem()">Claim</button>
+    <input id="details" placeholder="Additional details"> <br>
+
+    <button class="prettyButton" onclick="claimItem()">Claim!</button>
 
 </div>
 
 <script type="module" src="script.js"></script>
 
-<div style="margin-top:20px; text-align:center; color: black">
+<div style="margin-top:20px; text-align:center; color: black; display:none" id="Debug">
 
-<h3>Test a Serial Code</h3>
+    <h3>Test a Serial Code</h3>
 
-<input id="testCode" placeholder="Enter serial code">
+    <input id="testCode" placeholder="Enter serial code">
 
-<button onclick="goToCode()">Open</button>
+    <button onclick="goToCode()">Open</button>
 
+</div>
+
+<div>
+    <p>To turn on the debug mode, click here.</p>
 </div>
 
 <div class="footer">

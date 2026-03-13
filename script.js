@@ -56,7 +56,7 @@ else if (docSnap.exists()) {
 else {
 
   document.getElementById("info").innerText =
-    "This item has not been claimed yet.";
+    "This EcoWrap is brand new! You can claim it by filling out the form below.";
 
   document.getElementById("claimForm").style.display = "block";
 
