@@ -106,3 +106,15 @@ function formatDateTime(datetimeString) {
   });
 
 }
+
+windows.toggleDebug = function () {
+
+  const panel = document.getElementById("Debug");
+
+  if (panel.style.display === "none") {
+    panel.style.display = "block";
+  } else {
+    panel.style.display = "none";
+  }
+
+}
