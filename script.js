@@ -107,7 +107,7 @@ function formatDateTime(datetimeString) {
 
 }
 
-windows.toggleDebug = function () {
+window.toggleDebug = function () {
 
   const panel = document.getElementById("Debug");
 
