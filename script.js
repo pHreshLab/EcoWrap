@@ -24,14 +24,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
+const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+  const mode = params.get("mode");
 
 // read URL parameters
 async function loadPage() {
-
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get("code");
-  const mode = params.get("mode");
 
   // No code
   if (!code) {
