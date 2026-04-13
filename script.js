@@ -27,42 +27,66 @@ const db = getFirestore(app);
 
 
 // read URL parameters
-const params = new URLSearchParams(window.location.search);
-const code = params.get("code");
+async function loadPage() {
 
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+  const mode = params.get("mode");
 
+  // No code
+  if (!code) {
+    document.getElementById("info").innerText = "No code is found.";
+    return;
+  }
 
-const docRef = doc(db, "foodItems", code);
-const docSnap = await getDoc(docRef);
+  // DEMO MODE (skip Firebase completely)
+  if (mode === "demo") {
 
-if (!code) {
+    document.getElementById("info").innerHTML =
+      "<b>Demo Mode</b><br>Try filling the form below.";
 
-  document.getElementById("info").innerText = "No QR code provided.";
+    document.getElementById("claimForm").style.display = "block";
+
+    return; 
+  }
+
+  // NORMAL MODE → Firebase runs here ONLY
+  const docRef = doc(db, "foodItems", code);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+
+    const data = docSnap.data();
+
+    document.getElementById("info").innerHTML =
+      "Food: " + data.foodName + "<br>" +
+      "Prepared: " + formatDateTime(data.prepTime) + "<br>" +
+      "Best before: " + formatDateTime(data.bestBefore) + "<br>" +
+      "Details: " + data.details;
+
+  } else {
+
+    document.getElementById("info").innerText =
+      "This EcoWrap is brand new! You can claim it by filling out the form below.";
+
+    document.getElementById("claimForm").style.display = "block";
+
+  }
 
 }
 
-else if (docSnap.exists()) {
-
-  const data = docSnap.data();
-
-  document.getElementById("info").innerHTML =
-    "Food: " + data.foodName + "<br>" +
-    "Prepared: " + formatDateTime(data.prepTime) + "<br>" +
-    "Best before: " + formatDateTime(data.bestBefore) + "<br>" +
-    "Details: " + data.details;
-
-}
-
-else {
-
-  document.getElementById("info").innerText =
-    "This EcoWrap is brand new! You can claim it by filling out the form below.";
-
-  document.getElementById("claimForm").style.display = "block";
-
-}
+// run it
+loadPage();
 
 window.claimItem = async function () {
+
+  if (mode === "demo") {
+
+    // redirect to demo notice page
+    window.location.href = "demo.html";
+    return;
+
+  }
 
   const foodName = document.getElementById("foodName").value;
   const prepTime = document.getElementById("prepTime").value;
