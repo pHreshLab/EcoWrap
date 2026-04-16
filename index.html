@@ -18,57 +18,65 @@
 
 <body>
 
-<div class="header">    
 
-    <h1>EcoWrap: Food-pHreshness QR-Tag</h1>
+
+<div class="container">
+
+    <div class="header">    
+
+        <h1>EcoWrap: Food-pHreshness QR-Tag</h1>
+
+    </div>
+
+    <div id="info" style="margin-top:20px"> <p>Loading...</p> </div>
+
+    <div id="claimForm" style="display:none">
+
+        <p>Food name:</p>
+
+        <input id="foodName" placeholder="Nasi Goreng">
+
+        <p>Prepared time:</p>
+
+        <input type="datetime-local" id="prepTime">
+
+        <p>Best before:</p>
+
+        <input type="datetime-local" id="bestBefore">
+
+        <p>Details:</p>
+
+        <input id="details" placeholder="Additional details"> <br>
+
+        <button class="prettyButton" onclick="claimItem()">Claim!</button>
+
+    </div>
+
+
+
+    <script type="module" src="script.js"></script>
+
+    <div style="margin-top:20px; text-align:center; color: white; display:none" id="Debug">
+
+        <h3>Test a Serial Code</h3>
+
+        <input id="testCode" placeholder="Enter serial code">
+
+        <button onclick="goToCode()">Open</button>
+
+    </div>
+
+    <div>
+        <p>To enable debug mode,
+        <a href="#" onclick="toggleDebug()" style="color:darkslategray; text-decoration:underline">
+        click here.
+        </a>
+        </p>
+    </div>
 
 </div>
 
-<div id="info" style="margin-top:20px"> <p>Loading...</p> </div>
 
-<div id="claimForm" style="display:none">
-
-    <p>Food name:</p>
-
-    <input id="foodName" placeholder="Nasi Goreng">
-
-    <p>Prepared time:</p>
-
-    <input type="datetime-local" id="prepTime">
-
-    <p>Best before:</p>
-
-    <input type="datetime-local" id="bestBefore">
-
-    <p>Details:</p>
-
-    <input id="details" placeholder="Additional details"> <br>
-
-    <button class="prettyButton" onclick="claimItem()">Claim!</button>
-
-</div>
-
-
-
-<script type="module" src="script.js"></script>
-
-<div style="margin-top:20px; text-align:center; color: white; display:none" id="Debug">
-
-    <h3>Test a Serial Code</h3>
-
-    <input id="testCode" placeholder="Enter serial code">
-
-    <button onclick="goToCode()">Open</button>
-
-</div>
-
-<div>
-    <p>To enable debug mode,
-    <a href="#" onclick="toggleDebug()" style="color:lightblue; text-decoration:underline">
-    click here.
-    </a>
-    </p>
-</div>
 
 <div class="footer">
 
